@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/* Стили для страницы 404 */
+.not-found {
+  text-align: center;
+  margin-top: 100px;
+}
+.not-found h1 {
+  font-size: 72px;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+}
+.not-found p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+}
+.not-found a {
+  color: #4a6ee0;
+  text-decoration: none;
+  font-weight: 500;
+}
+.not-found a:hover {
+  text-decoration: underline;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 480px) {
+  .not-found {
+    margin-top: 60px;
+  }
+  .not-found h1 {
+    font-size: 48px;
+  }
+}
+
+/*# sourceMappingURL=notfound.css.map */

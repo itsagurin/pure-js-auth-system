@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/* Стили для стартовой страницы */
+.startup-container {
+  max-width: 800px;
+  margin: 80px auto;
+  text-align: center;
+}
+.startup-container h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #333;
+}
+.startup-container p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+}
+.startup-container .buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.startup-container .buttons-container button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.startup-container .buttons-container button.primary-btn {
+  background-color: #4a6ee0;
+  color: white;
+}
+.startup-container .buttons-container button.primary-btn:hover {
+  background-color: #3a5dcb;
+}
+.startup-container .buttons-container button.secondary-btn {
+  background-color: white;
+  color: #4a6ee0;
+  border: 1px solid #4a6ee0;
+}
+.startup-container .buttons-container button.secondary-btn:hover {
+  background-color: #f5f8ff;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 480px) {
+  .startup-container {
+    margin: 40px 20px;
+  }
+  .startup-container .buttons-container {
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=StartupPage.css.map */

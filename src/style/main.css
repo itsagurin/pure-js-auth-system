@@ -1,0 +1,348 @@
+@charset "UTF-8";
+/* Основные стили и импорты */
+/* Стили для домашней страницы */
+.home-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.home-container header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+.home-container header h1 {
+  font-size: 24px;
+  color: #333;
+}
+.home-container header #logout-btn {
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.home-container header #logout-btn:hover {
+  background-color: #d32f2f;
+}
+.home-container .content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 480px) {
+  .home-container {
+    padding: 15px;
+    margin: 10px;
+  }
+}
+/* Стили для формы логина */
+.login-form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+.login-form-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+}
+.login-form-container .form-group {
+  margin-bottom: 20px;
+}
+.login-form-container .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+}
+.login-form-container .form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+.login-form-container .form-group input:focus {
+  outline: none;
+  border-color: #4a6ee0;
+  box-shadow: 0 0 0 2px rgba(74, 110, 224, 0.2);
+}
+.login-form-container .form-group input::placeholder {
+  color: #aaa;
+}
+.login-form-container .form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.login-form-container .form-options .remember-me {
+  display: flex;
+  align-items: center;
+}
+.login-form-container .form-options .remember-me input {
+  margin-right: 8px;
+}
+.login-form-container .form-options .remember-me label {
+  color: #666;
+  font-size: 14px;
+}
+.login-form-container .form-options .forgot-password {
+  font-size: 14px;
+  color: #4a6ee0;
+  text-decoration: none;
+}
+.login-form-container .form-options .forgot-password:hover {
+  text-decoration: underline;
+}
+.login-form-container .btn-login {
+  width: 100%;
+  padding: 12px;
+  background-color: #4a6ee0;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.login-form-container .btn-login:hover {
+  background-color: #3a5dcb;
+}
+.login-form-container .btn-login:active {
+  background-color: #2a4db8;
+}
+.login-form-container .form-footer {
+  margin-top: 25px;
+  text-align: center;
+}
+.login-form-container .form-footer p {
+  color: #666;
+  font-size: 14px;
+}
+.login-form-container .form-footer a {
+  color: #4a6ee0;
+  text-decoration: none;
+  font-weight: 500;
+}
+.login-form-container .form-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 480px) {
+  .login-form-container {
+    padding: 20px;
+    margin: 10px;
+  }
+  .login-form-container .form-options {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .login-form-container .form-options .remember-me {
+    margin-bottom: 10px;
+  }
+}
+/* Стили для формы регистрации */
+.register-form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+.register-form-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+}
+.register-form-container .form-group {
+  margin-bottom: 20px;
+}
+.register-form-container .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+}
+.register-form-container .form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+.register-form-container .form-group input:focus {
+  outline: none;
+  border-color: #4a6ee0;
+  box-shadow: 0 0 0 2px rgba(74, 110, 224, 0.2);
+}
+.register-form-container .form-group input::placeholder {
+  color: #aaa;
+}
+.register-form-container .terms {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.register-form-container .terms input {
+  margin-right: 8px;
+  margin-top: 3px;
+}
+.register-form-container .terms label {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.register-form-container .terms label a {
+  color: #4a6ee0;
+  text-decoration: none;
+}
+.register-form-container .terms label a:hover {
+  text-decoration: underline;
+}
+.register-form-container .btn-register {
+  width: 100%;
+  padding: 12px;
+  background-color: #4a6ee0;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.register-form-container .btn-register:hover {
+  background-color: #3a5dcb;
+}
+.register-form-container .btn-register:active {
+  background-color: #2a4db8;
+}
+.register-form-container .form-footer {
+  margin-top: 25px;
+  text-align: center;
+}
+.register-form-container .form-footer p {
+  color: #666;
+  font-size: 14px;
+}
+.register-form-container .form-footer a {
+  color: #4a6ee0;
+  text-decoration: none;
+  font-weight: 500;
+}
+.register-form-container .form-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 480px) {
+  .register-form-container {
+    padding: 20px;
+    margin: 10px;
+  }
+}
+/* Стили для стартовой страницы */
+.startup-container {
+  max-width: 800px;
+  margin: 80px auto;
+  text-align: center;
+}
+.startup-container h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #333;
+}
+.startup-container p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+}
+.startup-container .buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.startup-container .buttons-container button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.startup-container .buttons-container button.primary-btn {
+  background-color: #4a6ee0;
+  color: white;
+}
+.startup-container .buttons-container button.primary-btn:hover {
+  background-color: #3a5dcb;
+}
+.startup-container .buttons-container button.secondary-btn {
+  background-color: white;
+  color: #4a6ee0;
+  border: 1px solid #4a6ee0;
+}
+.startup-container .buttons-container button.secondary-btn:hover {
+  background-color: #f5f8ff;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 480px) {
+  .startup-container {
+    margin: 40px 20px;
+  }
+  .startup-container .buttons-container {
+    flex-direction: column;
+  }
+}
+/* Базовые стили для всего приложения */
+body {
+  font-family: "Roboto", "Helvetica", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* Общие стили кнопок, которые могут использоваться во всем приложении */
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Общие стили для ссылок */
+a {
+  transition: color 0.3s;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,34 @@
+/* Основные стили и импорты */
+@import '../js/pages/HomePage/HomePage.scss';
+@import '../js/pages/LoginForm/LoginForm.scss';
+@import '../js/pages/RegForm/RegForm.scss';
+@import '../js/pages/StartupPage/StartupPage.scss';
+
+/* Базовые стили для всего приложения */
+body {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* Общие стили кнопок, которые могут использоваться во всем приложении */
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Общие стили для ссылок */
+a {
+  transition: color 0.3s;
+}
