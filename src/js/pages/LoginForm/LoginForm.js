@@ -1,10 +1,6 @@
 export class RenderLoginForm {
     constructor(containerId) {
         this.container = document.getElementById(containerId);
-        if (!this.container) {
-            console.error(`Контейнер с ID "${containerId}" не найден`);
-            return;
-        }
         this.render();
         this.addEventListeners();
     }
@@ -13,6 +9,7 @@ export class RenderLoginForm {
         this.container.innerHTML = `
       <div class="login-form-container">
         <h2>Вход в систему</h2>
+        <div id="login-error" class="error-message"></div>
         <form id="loginForm">
           <div class="form-group">
             <label for="login-email">Email</label>
@@ -27,7 +24,6 @@ export class RenderLoginForm {
               <input type="checkbox" id="remember-me">
               <label for="remember-me">Запомнить меня</label>
             </div>
-            <a href="#" class="forgot-password">Забыли пароль?</a>
           </div>
           <button type="submit" class="btn-login">Войти</button>
         </form>
@@ -56,12 +52,26 @@ export class RenderLoginForm {
 
     handleLogin(e) {
         e.preventDefault();
+        const errorContainer = document.getElementById('login-error');
+        errorContainer.textContent = '';
+
         const email = document.getElementById('login-email').value;
         const password = document.getElementById('login-password').value;
         const rememberMe = document.getElementById('remember-me').checked;
 
-        console.log('Логин пользователя:', { email, password, rememberMe });
+        const storedData = localStorage.getItem('loginData');
+        if (!storedData) {
+            errorContainer.textContent = "Пользователь не найден. Пожалуйста, зарегистрируйтесь.";
+            return;
+        }
 
-        window.location.href = '/home';
+        const { email: registeredEmail, password: registeredPassword } = JSON.parse(storedData);
+
+        if (email === registeredEmail && password === registeredPassword) {
+            localStorage.setItem('loginData', JSON.stringify({ email, password, rememberMe }));
+            window.location.href = '/home';
+        } else {
+            errorContainer.textContent = "Неверный email или пароль";
+        }
     }
 }

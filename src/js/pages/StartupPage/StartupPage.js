@@ -1,10 +1,6 @@
 export class StartupPage {
     constructor(containerId) {
         this.container = document.getElementById(containerId);
-        if (!this.container) {
-            console.error(`Контейнер с ID "${containerId}" не найден`);
-            return;
-        }
         this.render();
         this.addEventListeners();
     }

@@ -1,3 +1,5 @@
+import {setAuthData} from "../../auth/auth.js";
+
 export class RenderRegForm {
     constructor(containerId) {
         this.container = document.getElementById(containerId);
@@ -13,11 +15,8 @@ export class RenderRegForm {
         this.container.innerHTML = `
       <div class="register-form-container">
         <h2>Регистрация</h2>
+        <div id="register-error" class="error-message"></div>
         <form id="registerForm">
-          <div class="form-group">
-            <label for="register-name">Имя</label>
-            <input type="text" id="register-name" placeholder="Введите ваше имя" required>
-          </div>
           <div class="form-group">
             <label for="register-email">Email</label>
             <input type="email" id="register-email" placeholder="Введите ваш email" required>
@@ -30,9 +29,11 @@ export class RenderRegForm {
             <label for="register-confirm-password">Подтверждение пароля</label>
             <input type="password" id="register-confirm-password" placeholder="Подтвердите пароль" required>
           </div>
-          <div class="terms">
-            <input type="checkbox" id="terms-agree" required>
-            <label for="terms-agree">Я согласен с <a href="#">условиями использования</a></label>
+          <div class="form-options">
+            <div class="remember-me">
+              <input type="checkbox" id="remember-me">
+              <label for="remember-me">Запомнить меня</label>
+            </div>
           </div>
           <button type="submit" class="btn-register">Зарегистрироваться</button>
         </form>
@@ -61,23 +62,20 @@ export class RenderRegForm {
 
     handleRegister(e) {
         e.preventDefault();
-        const name = document.getElementById('register-name').value;
+        const errorContainer = document.getElementById('register-error');
+        errorContainer.textContent = '';
+
         const email = document.getElementById('register-email').value;
         const password = document.getElementById('register-password').value;
         const confirmPassword = document.getElementById('register-confirm-password').value;
-        const termsAgree = document.getElementById('terms-agree').checked;
+        const rememberMe = document.getElementById('remember-me').checked;
 
         if (password !== confirmPassword) {
-            alert('Пароли не совпадают');
+            errorContainer.textContent = 'Пароли не совпадают';
             return;
         }
 
-        if (!termsAgree) {
-            alert('Необходимо согласиться с условиями использования');
-            return;
-        }
-
-        console.log('Регистрация пользователя:', { name, email, password });
+        setAuthData(email, password, rememberMe);
 
         window.location.href = '/home';
     }

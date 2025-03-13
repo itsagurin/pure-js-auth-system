@@ -1,6 +1,5 @@
 @charset "UTF-8";
 /* Основные стили и импорты */
-/* Стили для домашней страницы */
 .home-container {
   max-width: 1000px;
   margin: 0 auto;
@@ -36,14 +35,107 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Медиа-запросы для адаптивности */
 @media (max-width: 480px) {
   .home-container {
     padding: 15px;
     margin: 10px;
   }
 }
-/* Стили для формы логина */
+.home-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.home-container header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+.home-container header h1 {
+  font-size: 24px;
+  color: #333;
+}
+.home-container header #logout-btn {
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.home-container header #logout-btn:hover {
+  background-color: #d32f2f;
+}
+.home-container .content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+.home-container .content form#update-form {
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 4px;
+}
+.home-container .content form#update-form .form-group {
+  margin-bottom: 15px;
+}
+.home-container .content form#update-form .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+}
+.home-container .content form#update-form .form-group input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.home-container .content form#update-form .btn-update {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.home-container .content form#update-form .btn-update:hover {
+  background-color: #43a047;
+}
+.home-container .content #update-message {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #d32f2f;
+}
+.home-container .content .btn-delete {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.home-container .content .btn-delete:hover {
+  background-color: #d32f2f;
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    padding: 15px;
+    margin: 10px;
+  }
+}
 .login-form-container {
   max-width: 400px;
   margin: 0 auto;
@@ -101,14 +193,6 @@
   color: #666;
   font-size: 14px;
 }
-.login-form-container .form-options .forgot-password {
-  font-size: 14px;
-  color: #4a6ee0;
-  text-decoration: none;
-}
-.login-form-container .form-options .forgot-password:hover {
-  text-decoration: underline;
-}
 .login-form-container .btn-login {
   width: 100%;
   padding: 12px;
@@ -144,7 +228,6 @@
   text-decoration: underline;
 }
 
-/* Медиа-запросы для адаптивности */
 @media (max-width: 480px) {
   .login-form-container {
     padding: 20px;
@@ -158,7 +241,6 @@
     margin-bottom: 10px;
   }
 }
-/* Стили для формы регистрации */
 .register-form-container {
   max-width: 400px;
   margin: 0 auto;
@@ -173,6 +255,23 @@
   color: #333;
   font-size: 24px;
   font-weight: 600;
+}
+.register-form-container .form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.register-form-container .form-options .remember-me {
+  display: flex;
+  align-items: center;
+}
+.register-form-container .form-options .remember-me input {
+  margin-right: 8px;
+}
+.register-form-container .form-options .remember-me label {
+  color: #666;
+  font-size: 14px;
 }
 .register-form-container .form-group {
   margin-bottom: 20px;
@@ -255,7 +354,6 @@
   text-decoration: underline;
 }
 
-/* Медиа-запросы для адаптивности */
 @media (max-width: 480px) {
   .register-form-container {
     padding: 20px;
