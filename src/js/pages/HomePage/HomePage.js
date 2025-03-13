@@ -3,7 +3,7 @@ export class HomePage {
         this.container = document.getElementById(containerId);
         this.render();
         this.addEventListeners();
-        this.populateUpdateForm(); // Заполняем форму актуальными данными, если они есть
+        this.populateUpdateForm();
     }
 
     render() {
@@ -28,11 +28,9 @@ export class HomePage {
             </div>
             <button type="submit" class="btn-update">Сохранить изменения</button>
           </form>
-          <!-- Блок для вывода ошибок/успешных сообщений -->
           <div id="update-message" class="update-message"></div>
           
           <hr>
-          <!-- Кнопка для удаления аккаунта -->
           <button id="delete-account-btn" class="btn-delete">Удалить аккаунт</button>
         </div>
       </div>
@@ -83,17 +81,14 @@ export class HomePage {
             return;
         }
 
-        // Получаем текущие данные, чтобы сохранить, например, rememberMe и время истечения
         const storedData = localStorage.getItem('loginData');
         let updatedData = { email: newEmail, password: newPassword };
         if (storedData) {
             const parsedData = JSON.parse(storedData);
-            // Сохраняем флаг "Запомнить меня" и время истечения, если они были установлены
             if (parsedData.rememberMe !== undefined) {
                 updatedData.rememberMe = parsedData.rememberMe;
             }
             if (parsedData.expireAt !== undefined) {
-                // Обновляем время истечения относительно текущего момента
                 const remainingTime = parsedData.expireAt - Date.now();
                 updatedData.expireAt = Date.now() + (remainingTime > 0 ? remainingTime : 5 * 60 * 1000);
             }
