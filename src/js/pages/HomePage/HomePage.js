@@ -44,9 +44,16 @@ export class HomePage {
 
         if (logoutBtn) {
             logoutBtn.addEventListener('click', () => {
+                const storedData = localStorage.getItem('loginData');
+                if (storedData) {
+                    const loginData = JSON.parse(storedData);
+                    loginData.expireAt = 0;
+                    localStorage.setItem('loginData', JSON.stringify(loginData));
+                }
                 window.location.href = '/';
             });
         }
+
 
         if (updateForm) {
             updateForm.addEventListener('submit', this.handleUpdate.bind(this));
